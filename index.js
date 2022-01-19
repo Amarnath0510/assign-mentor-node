@@ -3,8 +3,6 @@ import express, { request, response } from "express";
 import {MongoClient}  from "mongodb";
 import dotenv from "dotenv";
 dotenv.config();
-console.log(process.env);
-
 
 
 const app=express();
@@ -31,7 +29,7 @@ app.get("/mentors",async(request,response)=>{
   .collection("mentors")
   .find({})
   .toArray();
-
+ 
   console.log(filteredMentors);
   response.send(filteredMentors);
   });
