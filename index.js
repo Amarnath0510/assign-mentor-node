@@ -21,7 +21,7 @@ async function createConnection(){
     return client;
 }
 
-const client = await createConnection();
+export const client = await createConnection();
 
 app.get("/mentors",async(request,response)=>{
   const filteredMentors=await client
